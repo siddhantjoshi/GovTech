@@ -15,7 +15,6 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import 'cypress-xpath'
 import 'cypress-cucumber-preprocessor/steps'
 
 // Alternatively you can use CommonJS syntax:

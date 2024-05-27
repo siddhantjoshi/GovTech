@@ -3,7 +3,7 @@
 Feature: Health Survey Feature
 
     @Regression @smoke
-    Scenario: Verify user under 18 can fill out health survey
+    Scenario Outline: Verify user under 18 can fill out health survey
         Given the user lands on the URL
         And the user enters "<name>" in the name input field
         And the user clicks on the radio button under 18 age radio button
