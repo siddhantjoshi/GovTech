@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 class Util {
+    static time = new Date().getTime();
+
     static getLocator(page, element) {
         return cy.readFile('cypress/e2e/pom/locator/locators.json').then((locators) => {
             return locators[page][element];
@@ -9,8 +11,7 @@ class Util {
     }
 
     static log(message) {
-        const timeStamp = new Date().getTime();
-        const logFilePath = `cypress/logs/log_${timeStamp}.txt`;
+        const logFilePath = `cypress/logs/log_.txt`;
         cy.writeFile(logFilePath, `${new Date().toISOString()}: ${message}\n`);
     }
 
@@ -27,7 +28,7 @@ class Util {
     static takeScreenshot(stepName) {
         const timestamp = new Date().toISOString().replace(/:/g, "-");
         const screenshotName = `${stepName}_${timestamp}_.png`;
-        const screenshotPath = path.join(`${new Date().toISOString()}`, screenshotName);
+        const screenshotPath = path.join(`${this.time}`, screenshotName);
         cy.screenshot(screenshotPath);
     }
 }

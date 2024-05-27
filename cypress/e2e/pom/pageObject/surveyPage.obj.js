@@ -4,7 +4,6 @@ class SurveyPage {
     visit() {
         cy.visit('https://docs.google.com/forms/d/e/1FAIpQLScPfEbpaoUu3WVwSDM9wIFX5uo1XQ1xpuHNtP7cF_rkR-o8Zg/viewform');
         Util.takeScreenshot('visit');
-
     }
 
     fillSurveyDetailsName(details) {

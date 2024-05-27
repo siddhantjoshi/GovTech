@@ -3,6 +3,7 @@ const SurveyPage = require('../pageObject/surveyPage.obj');
 const Util = require('../utilities/util');
 
 Given('the user lands on the URL', () => {
+    Util.log("*************************** Start ***************************")
     Util.log('Opening survey page');
     SurveyPage.visit();
 });
